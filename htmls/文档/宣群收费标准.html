@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>宣群收费标准</title>
+<link rel="stylesheet" type="text/css" href="../../css.css">
+<style>
+    button {
+        width: 100px;
+        height: 50px;
+    }
+    
+</style>
+</head>
+<style type="text/css">
+ol,ul{
+display:block;
+list-style-type:none;
+margin:3px;
+}
+</style>
+
+<pre>
+《在学生会宣群收费标准》
+
+要在学生会宣传的，都必须先向群主或管理申请
+
+1.宣传一次，价格为50块！
+
+2.如果要扩大宣传影响的（如：艾特全体成员的，发布群公告的）都均要收取80块！
+
+3.宣传过第一次的，继续宣传第二次的，只收取原来的价钱-10！
+
+4. 当然…如果觉得太贵，可以选择购买学生会的宣传特权卡，只需要100块（不提供艾特全体成员），就可以自由宣传。
+</pre>
+<script>
+function mybutton(){
+    window.history.back();
+};
+window.onload = function() {
+        var heading = document.querySelector('pre');
+        heading.classList.add('active'); // 添加 'active' 类，触发过渡效果
+    };
+
+</script>
+<button type="button" onclick="mybutton()">返回</button>
+</body>
+</html>

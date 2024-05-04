@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>改标题</title>
+<link rel="stylesheet" type="text/css" href="css路径">
+<style>
+
+
+</style>
+</head>
+<style type="text/css">
+</style>
+<script>
+function back(){
+    window.history.back();
+};  // 返回按钮链接这个
+window.onload = function() {
+    var buttons = document.querySelectorAll('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.add('active');
+    }
+}; // 加载成功时触发过渡动画
+
+</script>
+</body>
+</html>
