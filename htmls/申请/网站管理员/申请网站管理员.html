@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>申请网站管理员</title>
+<link rel="stylesheet" type="text/css" href="../../../css.css">
+<style>
+
+
+</style>
+</head>
+<style type="text/css">
+pre {
+    font-size: 18px;
+    top: 100px;
+}
+input {
+    width: 200px;
+    height: 40px;
+}
+button {
+    position: absolute;
+    font-size: 30px;
+
+    width: 100px;
+    height: 60px;
+}
+#button_1{
+    top: 3px;
+    left: 230px;
+}
+
+</style>
+<script src="../../../javascript/get.js"></script>
+<input type="password" placeholder="输入管理员密钥" id="entry_1">
+<button type="button", id="button_1", onclick="_glysq()">确定</button>
+<pre>
+问：什么是管理员密钥
+答：管理员密钥是学生会管理员群主/站长分发的密钥，当你获得此密钥时，你将拥有更新活动、发文章等功能。
+
+问：我该如何获取管理员密钥？
+答：向站长，群主，或者发邮件到学生会邮箱里索要,前提是你必须是学生会群/学生会频道的管理员。
+</pre>
+<button type="button", onclick="back()", id="button_2">返回</button>
+<script>
+function back(){
+    window.history.back();
+};  // 返回按钮链接这个
+window.onload = function() {
+    var buttons = document.querySelectorAll('button');
+    var pres = document.querySelectorAll('pre')
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.add('active');
+    }
+    for (var i = 0; i < pres.length; i++) {
+        pres[i].classList.add('active');
+    }
+}; // 加载成功时触发过渡动画
+function _glysq() {
+    // 获取输入框元素
+    var inputElement = document.getElementById("entry_1");
+    // 获取输入框的值
+    var textValue = inputElement.value;
+    var _tf = GET("https://web.lvzhiyuan0925.cn/api/login?passworld="+textValue, 0);
+
+}
+
+</script>
+
+</body>
+</html>

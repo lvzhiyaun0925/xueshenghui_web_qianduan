@@ -8,32 +8,42 @@
 <style>
     #mybutton_1 {
         position: absolute;
-        top: 70%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
+        transition: opacity,  2.5s ease;
+    }
+    #mybutton_2 {
+        position: absolute;
+        top: 100%;
+        transform: translate(-50%, -50%);
+    }
+    #mybutton_2.active {
+        top: 70%;
+        left: 50%;
     }
     button {
-        opacity: 0;
+        width: 50%;
         font-size: 30px;
         transition: opacity,  0.7s ease;
         color: white;
         background-color: #0044ff;
     }
-    button.active {
-        opacity: 0.4; /* 设置按钮透明度 */
-    }
     h1 {
-        color: rgb(156, 80, 80);
+        color: rgb(255, 255, 255);
         opacity: 0;
-        transition: opacity 1s ease-in-out;
+        top: 0px;
+        left: 50%;
+        transition: opacity 1s ease-in-out, top 2.5s, color 2.5s;
+        transform: translate(-50%, -50%);
     }
     h1.active {
         opacity: 0.7;
         position: absolute;
         top: 30%;
-        left: 50%;
         transform: translate(-50%, -50%);
         font-size: 50px;
+        color: rgb(169, 16, 16);
     }
     pre {
         font-size: 18px;
@@ -45,12 +55,26 @@
         margin-left: 0px; /* 设置左边距为50像素 */
         margin-top: 635px; /* 设置上边距为20像素 */
     }
-    @media only screen and (max-width: 640px){}
+    @media only screen and (max-width: 640px){
+        #mybutton_1 {
+            top: 65%;
+            left: 50%;
+        }
+        #mybutton_2 {
+            top: 100%;
+            left: 50%;
+        }
+        #mybutton_2.active {
+        top: 80%;
+        left: 50%;
+    }
+    }
 </style>
 </head>
 <body>
-<h1>欢迎来到学生会！</h1>
+<h1 type="h1" id="h1_1">欢迎来到学生会！</h1>
 <button type="button" onclick="mybutton()" id="mybutton_1">关于本群</button>
+<button type="button" onclick="mybutton_2()" id="mybutton_2">申请网站管理员</button>
 <pre>
 群号：458713319 欢迎加入我们！
 </pre>
@@ -62,13 +86,19 @@ function mybutton(){
   // 使用 window.location.href 跳转到指定URL
   window.location.href = url;
 };
+function mybutton_2(){
+    var url = "htmls/申请/网站管理员/申请网站管理员.html"
+    window.location.href = url;
+}
 window.onload = function() {
     var heading = document.querySelector('h1');
-    var button = document.querySelector('button');
     var pre = document.querySelector('pre')
     pre.classList.add('active')
     heading.classList.add('active'); // 添加 'active' 类，触发过渡效果
-    button.classList.add('active');
+    var buttons = document.querySelectorAll('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.add('active');
+    }
 };
 </script>
 

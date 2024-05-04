@@ -39,8 +39,14 @@ function mybutton(){
     window.history.back();
 };
 window.onload = function() {
-        var heading = document.querySelector('pre');
-        heading.classList.add('active'); // 添加 'active' 类，触发过渡效果
+    var buttons = document.querySelectorAll('button');
+    var pres = document.querySelectorAll('pre')
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.add('active');
+    }
+    for (var i = 0; i < pres.length; i++) {
+        pres[i].classList.add('active');
+    }
     };
 
 </script>

@@ -2,6 +2,14 @@
     font-family: MyCustomFont; /* 自定义字体名称 */
     src: url('ZuiShenDeYeLiZuiWenRou-2.ttf'); /* 字体文件的路径 */
 }
+@keyframes moveDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100px); /* 元素向下移动 100px */
+    }
+}
 button {
     width: 200px;
     height: 100px;
@@ -9,7 +17,7 @@ button {
     border-radius: 20px; /* 设置圆角 */
     border: none;
     transition: background-color,  0.7s ease;
-    opacity: 0.4; /* 设置按钮透明度 */
+    opacity: 0; /* 设置按钮透明度 */
     color: white;
     font-family: MyCustomFont, sans-serif;
     font-weight: bold;
@@ -18,9 +26,12 @@ button:hover {
     background-color: #b700ff;
     opacity: 0.7;
 }
+button.active {
+    opacity: 0.4; /* 设置按钮透明度 */
+}
 
 body {
-    background-image: url('images/大厅背景2.jpg'); /* 设置背景图片 */
+    background-image: url('images/大厅背景1.jpg'); /* 设置背景图片 */
     background-color: #f0f0f0; /* 设置背景颜色 */
     background-size: cover;
 }
@@ -52,4 +63,24 @@ pre.active {
         height: 100px;
     }
   
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
+    padding: 10px;
+    border: 1px solid #0008ff;
+    border-radius: 5px;
+    background-color: #0008ff;
+    transition: border-color 0.3s ease;
+    opacity: 0.4;
+    font-family: MyCustomFont, sans-serif;
+    font-weight: bold;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+    border-color: #b700ff;
+    font-family: MyCustomFont, sans-serif;
+    font-weight: bold;
+}
+input::placeholder {
+    color: #ff0000;
+    font-size: 20px;
 }
